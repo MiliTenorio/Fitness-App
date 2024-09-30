@@ -4,6 +4,7 @@ import 'package:fitness_app/components/custom_app_bar.dart';
 import 'package:fitness_app/components/custom_body_title.dart';
 import 'package:fitness_app/components/custom_exercise_list.dart';
 import 'package:fitness_app/models/workout_exercises.dart';
+import 'package:fitness_app/training/screens/startTraining/start_training_screen.dart';
 import 'package:flutter/material.dart';
 
 class TrainingExerciseDetails extends StatefulWidget {
@@ -16,6 +17,17 @@ class TrainingExerciseDetails extends StatefulWidget {
 }
 
 class _TrainingExerciseDetailsState extends State<TrainingExerciseDetails> {
+  void _startTraining(BuildContext context, WorkoutExercises workoutExercise) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => StartTrainingScreen(
+          workoutExercises: workoutExercise,
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     String info = widget.workoutExercises.repetitions != null
@@ -57,14 +69,21 @@ class _TrainingExerciseDetailsState extends State<TrainingExerciseDetails> {
             Positioned(
               bottom: 20,
               left: MediaQuery.of(context).size.width / 2 - 28,
-              child: FloatingActionButton(
-                backgroundColor: AppColors.justWhite,
-                onPressed: () {
-                  print('SASSSSSS');
-                },
-                child: Icon(
-                  Icons.play_arrow,
-                  color: widget.workoutExercises.color,
+              child: Container(
+                color: AppColors.backgroundWhite,
+                child: TextButton(
+                  child: Row(children: [
+                    Icon(
+                      Icons.play_arrow,
+                      color: widget.workoutExercises.color,
+                    ),
+                    const Text(
+                      'Start your workout :)',
+                    ),
+                  ]),
+                  onPressed: () {
+                    _startTraining(context, widget.workoutExercises);
+                  },
                 ),
               ),
             ),

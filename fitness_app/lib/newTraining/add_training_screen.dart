@@ -10,10 +10,6 @@ class AddTrainingScreen extends StatefulWidget {
 class _AddTrainingScreenState extends State<AddTrainingScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('New Training'),
-      ),
-    );
+    return const Text('New Training');
   }
 }

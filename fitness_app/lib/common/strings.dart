@@ -20,6 +20,9 @@ class Strings {
   //Details Exercise
   static const String titleDetailsExercise = 'Let\'s start?!';
   static const String startButton = 'Start your workout';
+  //Start Training
+  static const String titleStartTraining = 'You can do it!';
+  static const String steps = 'Steps';
 
   //History Session
   //Progress Graph

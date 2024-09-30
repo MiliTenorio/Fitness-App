@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {
   final String title;
-  final String subtitle;
+  final String? subtitle;
   final IconData icon;
   final Color color;
   final Object? moreInfoOne;
@@ -12,7 +12,7 @@ class CustomCard extends StatelessWidget {
   const CustomCard({
     super.key,
     required this.title,
-    required this.subtitle,
+    this.subtitle,
     required this.icon,
     required this.color,
     this.moreInfoOne,
@@ -53,13 +53,15 @@ class CustomCard extends StatelessWidget {
                         fontWeight: FontWeight.w800,
                       ),
                     ),
-                    Text(
-                      subtitle,
-                      style: const TextStyle(
-                        color: AppColors.justWhite,
-                        fontSize: 12,
-                      ),
-                    ),
+                    subtitle != null
+                        ? Text(
+                            subtitle!,
+                            style: const TextStyle(
+                              color: AppColors.justWhite,
+                              fontSize: 12,
+                            ),
+                          )
+                        : const SizedBox(),
                   ],
                 ),
               ],
@@ -67,7 +69,8 @@ class CustomCard extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                moreInfoOne != null
+                //String
+                moreInfoOne != null && moreInfoOne is String
                     ? Text(
                         moreInfoOne! as String,
                         style: const TextStyle(
@@ -76,13 +79,26 @@ class CustomCard extends StatelessWidget {
                         ),
                       )
                     : const SizedBox(),
-                moreInfoTwo != null
+                moreInfoTwo != null && moreInfoTwo is String
                     ? Text(
                         moreInfoTwo! as String,
                         style: const TextStyle(
                           color: AppColors.justWhite,
                           fontSize: 12,
                         ),
+                      )
+                    : const SizedBox(),
+                //Icon
+                moreInfoOne != null && moreInfoOne is IconData
+                    ? Icon(
+                        moreInfoOne as IconData,
+                        color: AppColors.justWhite,
+                      )
+                    : const SizedBox(),
+                moreInfoTwo != null && moreInfoTwo is IconData
+                    ? Icon(
+                        moreInfoTwo as IconData,
+                        color: AppColors.justWhite,
                       )
                     : const SizedBox(),
               ],

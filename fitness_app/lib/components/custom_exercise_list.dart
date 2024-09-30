@@ -15,11 +15,14 @@ class CustomExerciseList extends StatelessWidget {
         child: Column(
           children: exerciseList.map(
             (item) {
-              return CustomCard(
-                title: item.name,
-                subtitle: item.description,
-                icon: item.icon,
-                color: color,
+              return GestureDetector(
+                onTap: () {},
+                child: CustomCard(
+                  title: item.name,
+                  // subtitle: item.description,
+                  icon: item.icon,
+                  color: color,
+                ),
               );
             },
           ).toList(),

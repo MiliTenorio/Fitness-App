@@ -27,8 +27,18 @@ class _HistoryExerciseDetailsState extends State<HistoryExerciseDetails> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const CustomBodyTitle(
-              title: Strings.titleWorkoutDetails,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const CustomBodyTitle(
+                  title: Strings.titleWorkoutDetails,
+                ),
+                widget.exerciseHistory.workoutExercises.repetitions != null
+                    ? Text(
+                        '${widget.exerciseHistory.workoutExercises.repetitions!}x${widget.exerciseHistory.workoutExercises.frequency!}')
+                    : Text(
+                        '${widget.exerciseHistory.workoutExercises.min!} ${Strings.min}')
+              ],
             ),
             Expanded(
               child: SingleChildScrollView(
