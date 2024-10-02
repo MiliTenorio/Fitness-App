@@ -36,41 +36,49 @@ class _CustomExerciseCardState extends State<CustomExerciseCard> {
               // moreInfoOne: Icons.play_arrow,
               // moreInfoTwo: Icons.edit,
             ),
-            _isVisible
-                ? Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Image.asset(
-                        'lib/common/assets/lateral_abdominal.png',
-                        width: 120,
-                        height: 120,
-                      ),
-                      Column(
+            AnimatedSize(
+              duration: const Duration(
+                milliseconds: 240,
+              ),
+              curve: Curves.easeInOut,
+              child: SizedBox(
+                child: _isVisible
+                    ? Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          GestureDetector(
-                            child: Icon(
-                              Icons.play_arrow,
-                              color: widget.color,
-                              size: 40,
-                            ),
-                            onTap: () {},
+                          Image.asset(
+                            'lib/common/assets/lateral_abdominal.png',
+                            width: 120,
+                            height: 120,
                           ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          GestureDetector(
-                            child: Icon(
-                              Icons.edit,
-                              color: widget.color,
-                              size: 30,
-                            ),
-                            onTap: () {},
+                          Column(
+                            children: [
+                              GestureDetector(
+                                child: Icon(
+                                  Icons.play_arrow,
+                                  color: widget.color,
+                                  size: 40,
+                                ),
+                                onTap: () {},
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              GestureDetector(
+                                child: Icon(
+                                  Icons.add,
+                                  color: widget.color,
+                                  size: 40,
+                                ),
+                                onTap: () {},
+                              ),
+                            ],
                           ),
                         ],
-                      ),
-                    ],
-                  )
-                : const SizedBox()
+                      )
+                    : const SizedBox(),
+              ),
+            ),
           ],
         ),
       ),

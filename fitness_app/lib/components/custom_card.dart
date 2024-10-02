@@ -45,20 +45,30 @@ class CustomCard extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      title,
-                      style: const TextStyle(
-                        color: AppColors.justWhite,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w800,
+                    SizedBox(
+                      width: moreInfoOne != null ? 200 : 250,
+                      child: Text(
+                        title,
+                        style: const TextStyle(
+                          color: AppColors.justWhite,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w800,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                     subtitle != null
-                        ? Text(
-                            subtitle!,
-                            style: const TextStyle(
-                              color: AppColors.justWhite,
-                              fontSize: 12,
+                        ? SizedBox(
+                            width: moreInfoOne != null ? 200 : 250,
+                            child: Text(
+                              subtitle!,
+                              style: const TextStyle(
+                                color: AppColors.justWhite,
+                                fontSize: 12,
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
                             ),
                           )
                         : const SizedBox(),

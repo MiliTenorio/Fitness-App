@@ -14,7 +14,7 @@ class Strings {
   static const String goalResume = 'Goal';
   static const String idontknowResume = 'I dont know';
   //Workout List
-  static const String titleWorkoutList = 'Start your workout';
+  static const String titleWorkoutList = 'Choose your workout';
   //Card
   static const String min = 'min';
   //Details Exercise

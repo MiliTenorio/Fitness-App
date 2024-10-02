@@ -115,8 +115,9 @@ WorkoutExercises workoutExercisesG = WorkoutExercises(
 
 //Exercises
 Exercise exerciseOne = Exercise(
-    name: 'Exercise 1',
-    description: 'Exercise 1 description',
+    name: 'Exercise 1 Nome Longo Exercise 1 Exercise 1 Nome Longo Exercise 1',
+    description:
+        'Exercise 1 description Descrição Longaaaa Exercise 1 description Exercise 1 description Exercise 1 description Exercise 1 description Exercise 1 description Exercise 1 description Exercise 1 description',
     icon: Icons.run_circle_outlined,
     typeTraining: TypeTraining.Cardio);
 

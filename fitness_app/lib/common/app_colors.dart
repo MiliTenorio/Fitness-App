@@ -5,7 +5,7 @@ class AppColors {
   static const Color mainBlueMenu = Color.fromARGB(255, 78, 126, 239); //menu
   static const Color disableBlue = Color.fromARGB(255, 155, 181, 239);
   static const Color selectedOption = Color.fromARGB(255, 243, 235, 244);
-  static const Color yellow = Color.fromRGBO(226, 194, 122, 1);
+  static const Color yellow = Color.fromRGBO(233, 195, 107, 1);
   static const Color purple = Color.fromARGB(255, 187, 145, 225);
   static const Color green = Color.fromARGB(255, 178, 215, 105);
   static const Color disableGraph = Color.fromARGB(255, 94, 95, 97);
