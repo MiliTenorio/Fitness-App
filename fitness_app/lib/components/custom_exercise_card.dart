@@ -47,9 +47,9 @@ class _CustomExerciseCardState extends State<CustomExerciseCard> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Image.asset(
-                            'lib/common/assets/lateral_abdominal.png',
+                            widget.exercise.pathImage,
                             width: 120,
-                            height: 120,
+                            height: 200,
                           ),
                           Column(
                             children: [
@@ -62,7 +62,7 @@ class _CustomExerciseCardState extends State<CustomExerciseCard> {
                                 onTap: () {},
                               ),
                               const SizedBox(
-                                height: 10,
+                                height: 60,
                               ),
                               GestureDetector(
                                 child: Icon(

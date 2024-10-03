@@ -31,4 +31,11 @@ class Strings {
   static const String titleHistoryList = 'Check your history';
   //Workout Details
   static const String titleWorkoutDetails = 'Check the exercises';
+
+  //Images and Gifs
+  static const String imageWorkoutLateralAbdominal =
+      "lib/common/assets/lateral_abdominal.png";
+
+  static const String gifWorkoutPuxadaAberta =
+      'lib/common/assets/puxada_aberta.gif';
 }

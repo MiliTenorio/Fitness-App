@@ -1,3 +1,4 @@
+import 'package:fitness_app/common/app_colors.dart';
 import 'package:fitness_app/common/app_theme.dart';
 import 'package:fitness_app/history/screens/history_screen.dart';
 import 'package:fitness_app/newTraining/add_training_screen.dart';
@@ -6,9 +7,15 @@ import 'package:fitness_app/tab_bar_menu.dart';
 import 'package:fitness_app/training/screens/training_screen.dart';
 import 'package:fitness_app/update/update_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
+
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    systemNavigationBarColor: AppColors.backgroundGrey,
+    systemNavigationBarIconBrightness: Brightness.dark,
+  ));
 }
 
 class MyApp extends StatelessWidget {

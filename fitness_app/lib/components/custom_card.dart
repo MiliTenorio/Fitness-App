@@ -46,7 +46,9 @@ class CustomCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
-                      width: moreInfoOne != null ? 200 : 250,
+                      width: moreInfoOne != null
+                          ? MediaQuery.of(context).size.width - 150
+                          : MediaQuery.of(context).size.width - 120,
                       child: Text(
                         title,
                         style: const TextStyle(
@@ -60,7 +62,9 @@ class CustomCard extends StatelessWidget {
                     ),
                     subtitle != null
                         ? SizedBox(
-                            width: moreInfoOne != null ? 200 : 250,
+                            width: moreInfoOne != null
+                                ? MediaQuery.of(context).size.width - 150
+                                : MediaQuery.of(context).size.width - 120,
                             child: Text(
                               subtitle!,
                               style: const TextStyle(

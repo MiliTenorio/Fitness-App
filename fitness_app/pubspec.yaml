@@ -70,6 +70,7 @@ flutter:
   generate: true
   assets:
     - lib/common/assets/lateral_abdominal.png
+    - lib/common/assets/puxada_aberta.gif
 
   # To add assets to your application, add an assets section, like this:
   # assets:

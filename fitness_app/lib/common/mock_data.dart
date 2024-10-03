@@ -1,5 +1,6 @@
 //Mock Data
 import 'package:fitness_app/common/app_colors.dart';
+import 'package:fitness_app/common/strings.dart';
 import 'package:fitness_app/models/enum_types.dart';
 import 'package:fitness_app/models/exercise.dart';
 import 'package:fitness_app/models/exercise_history.dart';
@@ -15,6 +16,7 @@ final List<WorkoutExercises> workoutsList = [
   workoutExercisesE,
   workoutExercisesF,
   workoutExercisesG,
+  workoutExercisesH
 ];
 
 //Training
@@ -113,31 +115,57 @@ WorkoutExercises workoutExercisesG = WorkoutExercises(
   color: AppColors.green,
 );
 
+WorkoutExercises workoutExercisesH = WorkoutExercises(
+  exercises: [
+    exerciseOne,
+    exerciseThree,
+    exerciseOne,
+    exerciseTwo,
+    exerciseThree,
+    exerciseOne,
+    exerciseThree,
+    exerciseOne,
+    exerciseTwo,
+    exerciseThree,
+  ],
+  repetitions: 3,
+  frequency: 12,
+  typeTraining: TypeTraining.Lower,
+  name:
+      'Lower Monster Nome Longo Lower Monster Nome Longo Lower Monster Nome Longo',
+  icon: Icons.airline_seat_legroom_normal_sharp,
+  color: AppColors.purple,
+);
+
 //Exercises
 Exercise exerciseOne = Exercise(
     name: 'Exercise 1 Nome Longo Exercise 1 Exercise 1 Nome Longo Exercise 1',
     description:
         'Exercise 1 description Descrição Longaaaa Exercise 1 description Exercise 1 description Exercise 1 description Exercise 1 description Exercise 1 description Exercise 1 description Exercise 1 description',
     icon: Icons.run_circle_outlined,
-    typeTraining: TypeTraining.Cardio);
+    typeTraining: TypeTraining.Cardio,
+    pathImage: Strings.imageWorkoutLateralAbdominal);
 
 Exercise exerciseTwo = Exercise(
     name: 'Exercise 2',
     description: 'Exercise 2 description',
     icon: Icons.abc,
-    typeTraining: TypeTraining.Cardio);
+    typeTraining: TypeTraining.Cardio,
+    pathImage: Strings.gifWorkoutPuxadaAberta);
 
 Exercise exerciseThree = Exercise(
     name: 'Exercise 3',
     description: 'Exercise 3 description',
     icon: Icons.abc,
-    typeTraining: TypeTraining.Lower);
+    typeTraining: TypeTraining.Lower,
+    pathImage: Strings.imageWorkoutLateralAbdominal);
 
 Exercise exerciseFour = Exercise(
     name: 'Exercise 2',
     description: 'Exercise 2 description',
     icon: Icons.abc,
-    typeTraining: TypeTraining.Upper);
+    typeTraining: TypeTraining.Upper,
+    pathImage: Strings.gifWorkoutPuxadaAberta);
 
 //Resume Data
 double progress = 40.0;

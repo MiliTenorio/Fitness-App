@@ -7,7 +7,7 @@ class CustomExerciseList extends StatelessWidget {
   final List<Exercise> exerciseList;
   final Color color;
 
-  Widget exerciseItem(Exercise exercise) {
+  Widget exerciseItem(Exercise exercise, dynamic context) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Row(
@@ -21,7 +21,7 @@ class CustomExerciseList extends StatelessWidget {
             width: 10,
           ),
           SizedBox(
-            width: 270,
+            width: MediaQuery.of(context).size.width - 90,
             child: Text(
               exercise.name,
               style: TextStyle(
@@ -46,7 +46,7 @@ class CustomExerciseList extends StatelessWidget {
           child: Column(
             children: exerciseList.map(
               (item) {
-                return exerciseItem(item);
+                return exerciseItem(item, context);
               },
             ).toList(),
           ),
