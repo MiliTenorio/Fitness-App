@@ -14,5 +14,12 @@ ThemeData getThemeData(BuildContext context) {
       ),
     ),
     scaffoldBackgroundColor: AppColors.backgroundGrey,
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        textStyle: WidgetStateProperty.all(
+          const TextStyle(fontSize: 12),
+        ),
+      ),
+    ),
   );
 }

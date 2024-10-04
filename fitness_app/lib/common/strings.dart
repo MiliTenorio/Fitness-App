@@ -19,10 +19,14 @@ class Strings {
   static const String min = 'min';
   //Details Exercise
   static const String titleDetailsExercise = 'Let\'s start?!';
-  static const String startButton = 'Start your workout';
   //Start Training
   static const String titleStartTraining = 'You can do it!';
   static const String steps = 'Steps';
+  static const String startButton = 'Start';
+  static const String stopButton = 'Stop';
+  static const String finishButton = 'Finish';
+  static const String doneButton = 'Done';
+  static const String addInfoButton = 'Add Info';
 
   //History Session
   //Progress Graph

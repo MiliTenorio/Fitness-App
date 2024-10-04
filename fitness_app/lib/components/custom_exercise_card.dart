@@ -1,4 +1,5 @@
 import 'package:fitness_app/components/custom_card.dart';
+import 'package:fitness_app/components/custom_exercise_card_details.dart';
 import 'package:fitness_app/models/exercise.dart';
 import 'package:flutter/material.dart';
 
@@ -43,38 +44,12 @@ class _CustomExerciseCardState extends State<CustomExerciseCard> {
               curve: Curves.easeInOut,
               child: SizedBox(
                 child: _isVisible
-                    ? Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Image.asset(
-                            widget.exercise.pathImage,
-                            width: 120,
-                            height: 200,
-                          ),
-                          Column(
-                            children: [
-                              GestureDetector(
-                                child: Icon(
-                                  Icons.play_arrow,
-                                  color: widget.color,
-                                  size: 40,
-                                ),
-                                onTap: () {},
-                              ),
-                              const SizedBox(
-                                height: 60,
-                              ),
-                              GestureDetector(
-                                child: Icon(
-                                  Icons.add,
-                                  color: widget.color,
-                                  size: 40,
-                                ),
-                                onTap: () {},
-                              ),
-                            ],
-                          ),
-                        ],
+                    ? SizedBox(
+                        height: 200,
+                        child: CustomExerciseCardDetails(
+                          color: widget.color,
+                          path: widget.exercise.pathImage,
+                        ),
                       )
                     : const SizedBox(),
               ),

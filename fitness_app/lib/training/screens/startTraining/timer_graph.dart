@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:fitness_app/common/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
@@ -75,23 +76,20 @@ class _TimerGraphState extends State<TimerGraph> {
                       ? ElevatedButton(
                           onPressed: stopTimer,
                           child: const Text(
-                            'Stop',
-                            style: TextStyle(fontSize: 12),
+                            Strings.stopButton,
                           ),
                         )
                       : ElevatedButton(
                           onPressed: startTimer,
                           child: const Text(
-                            'Start',
-                            style: TextStyle(fontSize: 12),
+                            Strings.startButton,
                           ),
                         ),
-                  const SizedBox(width: 5),
+                  const SizedBox(width: 10),
                   ElevatedButton(
                     onPressed: resetTimer,
                     child: const Text(
-                      'Reset',
-                      style: TextStyle(fontSize: 12),
+                      Strings.finishButton,
                     ),
                   ),
                 ],
