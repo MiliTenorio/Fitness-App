@@ -1,11 +1,63 @@
 //Mock Data
 import 'package:fitness_app/common/app_colors.dart';
 import 'package:fitness_app/common/strings.dart';
+import 'package:fitness_app/history/screens/history_screen.dart';
 import 'package:fitness_app/models/enum_types.dart';
 import 'package:fitness_app/models/exercise.dart';
 import 'package:fitness_app/models/exercise_history.dart';
 import 'package:fitness_app/models/workout_exercises.dart';
+import 'package:fitness_app/newTraining/add_training_screen.dart';
+import 'package:fitness_app/progress/progress_screen.dart';
+import 'package:fitness_app/training/screens/training_screen.dart';
+import 'package:fitness_app/update/update_screen.dart';
 import 'package:flutter/material.dart';
+
+//Screens
+List<Map<String, Object>>? screens = [
+  {
+    'title': Strings.trainingSession,
+    'screen': TrainingScreen(),
+  },
+  {
+    'title': Strings.updateSession,
+    'screen': const UpdateScreen(),
+  },
+  {
+    'title': Strings.newTrainingSession,
+    'screen': const AddTrainingScreen(),
+  },
+  {
+    'title': Strings.iDontKnowSession,
+    'screen': const ProgressScreen(),
+  },
+  {
+    'title': Strings.historySession,
+    'screen': const HistoryScreen(),
+  },
+];
+
+List<Icon>? icons = [
+  const Icon(
+    Icons.sports_gymnastics,
+    color: AppColors.justWhite,
+  ),
+  const Icon(
+    Icons.change_circle_outlined,
+    color: AppColors.justWhite,
+  ),
+  const Icon(
+    Icons.add,
+    color: AppColors.justWhite,
+  ),
+  const Icon(
+    Icons.auto_graph,
+    color: AppColors.justWhite,
+  ),
+  const Icon(
+    Icons.history,
+    color: AppColors.justWhite,
+  ),
+];
 
 //List trainings
 final List<WorkoutExercises> workoutsList = [
@@ -26,7 +78,7 @@ WorkoutExercises workoutExercisesA = WorkoutExercises(
   ],
   repetitions: 3,
   frequency: 12,
-  typeTraining: TypeTraining.Upper,
+  typeTraining: TypeTraining.upper,
   name: 'Upper Gain',
   icon: Icons.woman,
   color: AppColors.lightGreen,
@@ -47,7 +99,7 @@ WorkoutExercises workoutExercisesB = WorkoutExercises(
   ],
   repetitions: 3,
   frequency: 12,
-  typeTraining: TypeTraining.Lower,
+  typeTraining: TypeTraining.lower,
   name: 'Lower Monster',
   icon: Icons.airline_seat_legroom_normal_sharp,
   color: AppColors.purple,
@@ -60,7 +112,7 @@ WorkoutExercises workoutExercisesC = WorkoutExercises(
     exerciseThree,
   ],
   min: 120,
-  typeTraining: TypeTraining.Cardio,
+  typeTraining: TypeTraining.cardio,
   name: 'Cardio Hard',
   icon: Icons.directions_run,
   color: AppColors.green,
@@ -71,7 +123,7 @@ WorkoutExercises workoutExercisesD = WorkoutExercises(
     exerciseFour,
   ],
   min: 60,
-  typeTraining: TypeTraining.Yoga,
+  typeTraining: TypeTraining.yoga,
   name: 'Yoga',
   icon: Icons.accessibility_new,
   color: AppColors.yellow,
@@ -83,7 +135,7 @@ WorkoutExercises workoutExercisesE = WorkoutExercises(
   ],
   repetitions: 3,
   frequency: 12,
-  typeTraining: TypeTraining.Upper,
+  typeTraining: TypeTraining.upper,
   name: 'Upper Nothing',
   icon: Icons.woman,
   color: AppColors.lightGreen,
@@ -96,7 +148,7 @@ WorkoutExercises workoutExercisesF = WorkoutExercises(
   ],
   repetitions: 3,
   frequency: 12,
-  typeTraining: TypeTraining.Lower,
+  typeTraining: TypeTraining.lower,
   name: 'Lower Just do it',
   icon: Icons.airline_seat_legroom_normal_sharp,
   color: AppColors.purple,
@@ -109,7 +161,7 @@ WorkoutExercises workoutExercisesG = WorkoutExercises(
     exerciseThree,
   ],
   min: 60,
-  typeTraining: TypeTraining.Cardio,
+  typeTraining: TypeTraining.cardio,
   name: 'Cardio OK',
   icon: Icons.directions_run,
   color: AppColors.green,
@@ -130,7 +182,7 @@ WorkoutExercises workoutExercisesH = WorkoutExercises(
   ],
   repetitions: 3,
   frequency: 12,
-  typeTraining: TypeTraining.Lower,
+  typeTraining: TypeTraining.lower,
   name:
       'Lower Monster Nome Longo Lower Monster Nome Longo Lower Monster Nome Longo',
   icon: Icons.airline_seat_legroom_normal_sharp,
@@ -143,28 +195,28 @@ Exercise exerciseOne = Exercise(
     description:
         'Exercise 1 description Descrição Longaaaa Exercise 1 description Exercise 1 description Exercise 1 description Exercise 1 description Exercise 1 description Exercise 1 description Exercise 1 description',
     icon: Icons.run_circle_outlined,
-    typeTraining: TypeTraining.Cardio,
+    typeTraining: TypeTraining.cardio,
     pathImage: Strings.imageWorkoutLateralAbdominal);
 
 Exercise exerciseTwo = Exercise(
     name: 'Exercise 2',
     description: 'Exercise 2 description',
     icon: Icons.abc,
-    typeTraining: TypeTraining.Cardio,
+    typeTraining: TypeTraining.cardio,
     pathImage: Strings.gifWorkoutPuxadaAberta);
 
 Exercise exerciseThree = Exercise(
     name: 'Exercise 3',
     description: 'Exercise 3 description',
     icon: Icons.abc,
-    typeTraining: TypeTraining.Lower,
+    typeTraining: TypeTraining.lower,
     pathImage: Strings.imageWorkoutLateralAbdominal);
 
 Exercise exerciseFour = Exercise(
     name: 'Exercise 2',
     description: 'Exercise 2 description',
     icon: Icons.abc,
-    typeTraining: TypeTraining.Upper,
+    typeTraining: TypeTraining.upper,
     pathImage: Strings.gifWorkoutPuxadaAberta);
 
 //Resume Data

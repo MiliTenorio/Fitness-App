@@ -3,9 +3,9 @@ import 'package:fitness_app/components/custom_app_bar.dart';
 import 'package:fitness_app/components/custom_body_title.dart';
 import 'package:fitness_app/components/custom_graph_card.dart';
 import 'package:fitness_app/models/workout_exercises.dart';
-import 'package:fitness_app/training/screens/startTraining/start_graph.dart';
-import 'package:fitness_app/training/screens/startTraining/timer_graph.dart';
-import 'package:fitness_app/training/screens/startTraining/training_list.dart';
+import 'package:fitness_app/training/components/start_graph.dart';
+import 'package:fitness_app/training/components/training_list.dart';
+import 'package:fitness_app/training/screens/timer_graph.dart';
 import 'package:flutter/material.dart';
 
 class StartTrainingScreen extends StatefulWidget {

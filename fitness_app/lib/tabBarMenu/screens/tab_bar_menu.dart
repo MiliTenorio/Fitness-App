@@ -1,11 +1,8 @@
 import 'package:fitness_app/common/app_colors.dart';
 import 'package:fitness_app/common/strings.dart';
-import 'package:fitness_app/history/screens/history_screen.dart';
-import 'package:fitness_app/newTraining/add_training_screen.dart';
-import 'package:fitness_app/progress/progress_screen.dart';
-import 'package:fitness_app/training/screens/training_screen.dart';
-import 'package:fitness_app/update/update_screen.dart';
 import 'package:flutter/material.dart';
+
+import '../../common/mock_data.dart';
 
 class TabBarMenu extends StatefulWidget {
   const TabBarMenu({super.key, this.menuIndex});
@@ -24,51 +21,9 @@ class _TabBarMenu extends State<TabBarMenu> {
   @override
   void initState() {
     super.initState();
-    _screens = [
-      {
-        'title': Strings.trainingSession,
-        'screen': TrainingScreen(),
-      },
-      {
-        'title': Strings.updateSession,
-        'screen': const UpdateScreen(),
-      },
-      {
-        'title': Strings.newTrainingSession,
-        'screen': const AddTrainingScreen(),
-      },
-      {
-        'title': Strings.iDontKnowSession,
-        'screen': const ProgressScreen(),
-      },
-      {
-        'title': Strings.historySession,
-        'screen': const HistoryScreen(),
-      },
-    ];
+    _screens = screens;
 
-    _icons = [
-      const Icon(
-        Icons.sports_gymnastics,
-        color: AppColors.justWhite,
-      ),
-      const Icon(
-        Icons.change_circle_outlined,
-        color: AppColors.justWhite,
-      ),
-      const Icon(
-        Icons.add,
-        color: AppColors.justWhite,
-      ),
-      const Icon(
-        Icons.auto_graph,
-        color: AppColors.justWhite,
-      ),
-      const Icon(
-        Icons.history,
-        color: AppColors.justWhite,
-      ),
-    ];
+    _icons = icons;
 
     if (widget.menuIndex != null) {
       _selectedIndex = widget.menuIndex!;

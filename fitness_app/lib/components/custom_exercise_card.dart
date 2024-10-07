@@ -1,6 +1,6 @@
 import 'package:fitness_app/components/custom_card.dart';
-import 'package:fitness_app/components/custom_exercise_card_details.dart';
 import 'package:fitness_app/models/exercise.dart';
+import 'package:fitness_app/training/components/custom_exercise_card_details.dart';
 import 'package:flutter/material.dart';
 
 class CustomExerciseCard extends StatefulWidget {

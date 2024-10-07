@@ -1,6 +1,6 @@
 import 'package:fitness_app/components/custom_graph_card.dart';
-import 'package:fitness_app/training/screens/week_progress.dart';
-import 'package:fitness_app/training/screens/week_status.dart';
+import 'package:fitness_app/training/components/week_progress.dart';
+import 'package:fitness_app/training/components/week_status.dart';
 import 'package:flutter/material.dart';
 
 class ResumeCard extends StatelessWidget {

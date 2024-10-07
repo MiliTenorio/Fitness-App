@@ -4,19 +4,21 @@ import 'package:fitness_app/components/custom_app_bar.dart';
 import 'package:fitness_app/components/custom_body_title.dart';
 import 'package:fitness_app/components/custom_exercise_list.dart';
 import 'package:fitness_app/models/workout_exercises.dart';
-import 'package:fitness_app/training/screens/startTraining/start_training_screen.dart';
+import 'package:fitness_app/training/screens/start_training_screen.dart';
 import 'package:flutter/material.dart';
 
-class TrainingExerciseDetails extends StatefulWidget {
-  const TrainingExerciseDetails({super.key, required this.workoutExercises});
+class TrainingExerciseDetailsScreen extends StatefulWidget {
+  const TrainingExerciseDetailsScreen(
+      {super.key, required this.workoutExercises});
   final WorkoutExercises workoutExercises;
 
   @override
-  State<TrainingExerciseDetails> createState() =>
+  State<TrainingExerciseDetailsScreen> createState() =>
       _TrainingExerciseDetailsState();
 }
 
-class _TrainingExerciseDetailsState extends State<TrainingExerciseDetails> {
+class _TrainingExerciseDetailsState
+    extends State<TrainingExerciseDetailsScreen> {
   void _startTraining(BuildContext context, WorkoutExercises workoutExercise) {
     Navigator.push(
       context,

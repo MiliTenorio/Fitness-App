@@ -1,7 +1,7 @@
 enum TypeTraining {
-  Lower,
-  Upper,
-  Cardio,
-  Yoga,
-  Pole,
+  lower,
+  upper,
+  cardio,
+  yoga,
+  pole,
 }

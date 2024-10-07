@@ -43,3 +43,23 @@ class Strings {
   static const String gifWorkoutPuxadaAberta =
       'lib/common/assets/puxada_aberta.gif';
 }
+
+extension AppModuleRoutes on String {
+  static const String trainingModule = "/training-module";
+  static const String updateModule = "/update-module";
+  static const String newTraining = "/new-training-module";
+  static const String iDontKnowModule = "/i-dont-know-module";
+  static const String historyModule = "/history-module";
+}
+
+extension AppChildRoutes on String {
+  static const String initialRoute = "/";
+  //Training Routes
+  static const String trainingExerciseDetailsRoute =
+      "/training-exercise-details";
+  static const String startTrainingRoute = "/start-training-route";
+
+  //History Routes
+  static const String historyExerciseDetailsRoute =
+      "/history-exercise-details-route";
+}

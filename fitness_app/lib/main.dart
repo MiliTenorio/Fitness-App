@@ -3,7 +3,7 @@ import 'package:fitness_app/common/app_theme.dart';
 import 'package:fitness_app/history/screens/history_screen.dart';
 import 'package:fitness_app/newTraining/add_training_screen.dart';
 import 'package:fitness_app/progress/progress_screen.dart';
-import 'package:fitness_app/tab_bar_menu.dart';
+import 'package:fitness_app/tabBarMenu/screens/tab_bar_menu.dart';
 import 'package:fitness_app/training/screens/training_screen.dart';
 import 'package:fitness_app/update/update_screen.dart';
 import 'package:flutter/material.dart';
@@ -37,5 +37,12 @@ class MyApp extends StatelessWidget {
         '/history': (context) => const HistoryScreen(),
       },
     );
+    // return MaterialApp.router(
+    //   title: 'Fitnes app :)',
+    //   theme: getThemeData(context),
+    //   routeInformationParser: Modular.routeInformationParser,
+    //   routerDelegate: Modular.routerDelegate,
+    //   routerConfig: Modular.routerConfig,
+    // );
   }
 }

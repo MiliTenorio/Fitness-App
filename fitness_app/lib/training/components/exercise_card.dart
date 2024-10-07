@@ -2,7 +2,7 @@ import 'package:fitness_app/common/strings.dart';
 import 'package:fitness_app/components/custom_card.dart';
 import 'package:fitness_app/components/custom_dialog.dart';
 import 'package:fitness_app/models/workout_exercises.dart';
-import 'package:fitness_app/training/screens/training_exercise_details.dart';
+import 'package:fitness_app/training/screens/training_exercise_details_screen.dart';
 import 'package:flutter/material.dart';
 
 class ExerciseCard extends StatelessWidget {
@@ -18,7 +18,7 @@ class ExerciseCard extends StatelessWidget {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => TrainingExerciseDetails(
+        builder: (context) => TrainingExerciseDetailsScreen(
           workoutExercises: workoutExercise,
         ),
       ),
