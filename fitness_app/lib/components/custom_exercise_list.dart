@@ -1,4 +1,4 @@
-import 'package:fitness_app/models/exercise.dart';
+import 'package:fitness_app/models/exercise/exercise.dart';
 import 'package:flutter/material.dart';
 
 class CustomExerciseList extends StatelessWidget {
@@ -13,7 +13,7 @@ class CustomExerciseList extends StatelessWidget {
       child: Row(
         children: [
           Icon(
-            exercise.icon,
+            Icons.abc,
             size: 35,
             color: color,
           ),

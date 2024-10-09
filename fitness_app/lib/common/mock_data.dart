@@ -3,7 +3,7 @@ import 'package:fitness_app/common/app_colors.dart';
 import 'package:fitness_app/common/strings.dart';
 import 'package:fitness_app/history/screens/history_screen.dart';
 import 'package:fitness_app/models/enum_types.dart';
-import 'package:fitness_app/models/exercise.dart';
+import 'package:fitness_app/models/exercise/exercise.dart';
 import 'package:fitness_app/models/exercise_history.dart';
 import 'package:fitness_app/models/workout_exercises.dart';
 import 'package:fitness_app/newTraining/add_training_screen.dart';
@@ -194,28 +194,24 @@ Exercise exerciseOne = Exercise(
     name: 'Exercise 1 Nome Longo Exercise 1 Exercise 1 Nome Longo Exercise 1',
     description:
         'Exercise 1 description Descrição Longaaaa Exercise 1 description Exercise 1 description Exercise 1 description Exercise 1 description Exercise 1 description Exercise 1 description Exercise 1 description',
-    icon: Icons.run_circle_outlined,
     typeTraining: TypeTraining.cardio,
     pathImage: Strings.imageWorkoutLateralAbdominal);
 
 Exercise exerciseTwo = Exercise(
     name: 'Exercise 2',
     description: 'Exercise 2 description',
-    icon: Icons.abc,
     typeTraining: TypeTraining.cardio,
     pathImage: Strings.gifWorkoutPuxadaAberta);
 
 Exercise exerciseThree = Exercise(
     name: 'Exercise 3',
     description: 'Exercise 3 description',
-    icon: Icons.abc,
     typeTraining: TypeTraining.lower,
     pathImage: Strings.imageWorkoutLateralAbdominal);
 
 Exercise exerciseFour = Exercise(
     name: 'Exercise 2',
     description: 'Exercise 2 description',
-    icon: Icons.abc,
     typeTraining: TypeTraining.upper,
     pathImage: Strings.gifWorkoutPuxadaAberta);
 

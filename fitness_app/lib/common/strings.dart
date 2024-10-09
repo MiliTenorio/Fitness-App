@@ -63,3 +63,16 @@ extension AppChildRoutes on String {
   static const String historyExerciseDetailsRoute =
       "/history-exercise-details-route";
 }
+
+extension DataBaseStrings on String {
+  //Database
+
+  //Exercises
+  static final exerciseTable = 'exercisesTable';
+  static final exerciseId = '_id';
+  static final exerciseName = 'exerciseName';
+  static final exerciseDescription = 'exerciseDescription';
+  static final exerciseTypeTraining = 'exerciseTypeTraining';
+  //static final exerciseImage = 'exerciseImage';
+  //static final exerciseWeight = 'exerciseWeight';
+}

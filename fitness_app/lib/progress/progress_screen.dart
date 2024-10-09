@@ -5,6 +5,6 @@ class ProgressScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('Progress');
+    return const Text('Progress');
   }
 }

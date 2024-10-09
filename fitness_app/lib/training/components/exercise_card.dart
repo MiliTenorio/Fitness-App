@@ -1,6 +1,5 @@
 import 'package:fitness_app/common/strings.dart';
 import 'package:fitness_app/components/custom_card.dart';
-import 'package:fitness_app/components/custom_dialog.dart';
 import 'package:fitness_app/models/workout_exercises.dart';
 import 'package:fitness_app/training/screens/training_exercise_details_screen.dart';
 import 'package:flutter/material.dart';
@@ -26,15 +25,15 @@ class ExerciseCard extends StatelessWidget {
   }
 
   //change to controller
-  void _showDialog(BuildContext context, WorkoutExercises exercise) {
-    CustomDialog dialog = CustomDialog();
-    dialog.showCustomDialog(
-      context,
-      exercise.name,
-      'You have selected the ${exercise.name} exercise!',
-      exercise.icon,
-    );
-  }
+  // void _showDialog(BuildContext context, WorkoutExercises exercise) {
+  //   CustomDialog dialog = CustomDialog();
+  //   dialog.showCustomDialog(
+  //     context,
+  //     exercise.name,
+  //     'You have selected the ${exercise.name} exercise!',
+  //     exercise.icon,
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,7 @@
 import 'package:fitness_app/common/app_colors.dart';
 import 'package:fitness_app/common/app_theme.dart';
 import 'package:fitness_app/history/screens/history_screen.dart';
+import 'package:fitness_app/models/exercise/exercise_store.dart';
 import 'package:fitness_app/newTraining/add_training_screen.dart';
 import 'package:fitness_app/progress/progress_screen.dart';
 import 'package:fitness_app/tabBarMenu/screens/tab_bar_menu.dart';
@@ -8,9 +9,13 @@ import 'package:fitness_app/training/screens/training_screen.dart';
 import 'package:fitness_app/update/update_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(Provider(
+    create: (_) => ExerciseStore(),
+    child: MyApp(),
+  ));
 
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     systemNavigationBarColor: AppColors.backgroundGrey,

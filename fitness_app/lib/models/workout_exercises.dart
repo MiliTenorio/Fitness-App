@@ -1,5 +1,5 @@
 import 'package:fitness_app/models/enum_types.dart';
-import 'package:fitness_app/models/exercise.dart';
+import 'package:fitness_app/models/exercise/exercise.dart';
 import 'package:flutter/material.dart';
 
 class WorkoutExercises {
