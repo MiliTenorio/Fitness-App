@@ -47,7 +47,7 @@ class ExerciseDao {
         )''';
   }
 
-  Exercise convertToExercise(ExerciseDao exerciseDB) {
+  static Exercise convertToExercise(ExerciseDao exerciseDB) {
     return Exercise(
         name: exerciseDB.name,
         description: exerciseDB.description,
@@ -55,7 +55,7 @@ class ExerciseDao {
         pathImage: Strings.imageWorkoutLateralAbdominal);
   }
 
-  TypeTraining convertToType(String type) {
+  static TypeTraining convertToType(String type) {
     switch (type) {
       case 'lower':
         return TypeTraining.lower;
@@ -77,5 +77,16 @@ class ExerciseDao {
         description: exercise.description,
         typeTraining: exercise.typeTraining.toString(),
         pathImage: exercise.pathImage);
+  }
+
+  static List<Exercise> convertListToExercise(
+      List<ExerciseDao> exerciseDAOList) {
+    List<Exercise> exercises = [];
+
+    for (ExerciseDao item in exerciseDAOList) {
+      exercises.add(convertToExercise(item));
+    }
+
+    return exercises;
   }
 }

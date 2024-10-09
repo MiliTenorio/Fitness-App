@@ -68,8 +68,7 @@ class DatabaseHelper {
     return databaseExists(path);
   }
 
-  //
-
+  //Exercise :)
   Future<int> insertExercise(ExerciseDao exercise) async {
     Database db = await instance.database;
     return await db.insert(DataBaseStrings.exerciseTable, exercise.toMap());
@@ -82,5 +81,14 @@ class DatabaseHelper {
     return List.generate(maps.length, (i) {
       return ExerciseDao.fromMap(maps[i]);
     });
+  }
+
+  Future<int> deleteExercise(String name) async {
+    Database db = await instance.database;
+    return await db.delete(
+      DataBaseStrings.exerciseTable,
+      where: '${DataBaseStrings.exerciseName} = ?',
+      whereArgs: [name],
+    );
   }
 }

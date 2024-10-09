@@ -9,7 +9,7 @@ import 'package:fitness_app/models/workout_exercises.dart';
 import 'package:fitness_app/newTraining/add_training_screen.dart';
 import 'package:fitness_app/progress/progress_screen.dart';
 import 'package:fitness_app/training/screens/training_screen.dart';
-import 'package:fitness_app/update/update_screen.dart';
+import 'package:fitness_app/update/screens/update_screen.dart';
 import 'package:flutter/material.dart';
 
 //Screens
