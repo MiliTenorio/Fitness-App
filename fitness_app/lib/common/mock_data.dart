@@ -247,3 +247,11 @@ ExerciseHistory exerciseHistoryFour = ExerciseHistory(
   dateTime: DateTime(2024, 09, 24),
   workoutExercises: workoutExercisesE,
 );
+
+final List<String> listTypeTrainings = [
+  TypeTraining.cardio.name,
+  TypeTraining.lower.name,
+  TypeTraining.upper.name,
+  TypeTraining.pole.name,
+  TypeTraining.yoga.name,
+];

@@ -83,12 +83,23 @@ class DatabaseHelper {
     });
   }
 
-  Future<int> deleteExercise(String name) async {
+  Future<int> deleteExercise(int id) async {
     Database db = await instance.database;
     return await db.delete(
       DataBaseStrings.exerciseTable,
-      where: '${DataBaseStrings.exerciseName} = ?',
-      whereArgs: [name],
+      where: '${DataBaseStrings.exerciseId} = ?',
+      whereArgs: [id],
+    );
+  }
+
+  Future<int> updateExercise(ExerciseDao exerciseDao) async {
+    Database db = await instance.database;
+
+    return await db.update(
+      DataBaseStrings.exerciseTable,
+      exerciseDao.toMap(),
+      where: '${DataBaseStrings.exerciseId} = ?',
+      whereArgs: [exerciseDao.id],
     );
   }
 }

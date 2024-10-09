@@ -1,11 +1,11 @@
 import 'dart:math';
 
 import 'package:fitness_app/common/app_colors.dart';
+import 'package:fitness_app/common/mock_data.dart';
 import 'package:fitness_app/common/strings.dart';
 import 'package:fitness_app/components/custom_exercise_card_item.dart';
 import 'package:fitness_app/database/database_helper.dart';
 import 'package:fitness_app/database/models/exercise_dao.dart';
-import 'package:fitness_app/models/enum_types.dart';
 import 'package:fitness_app/models/exercise/exercise.dart';
 import 'package:flutter/material.dart';
 
@@ -18,13 +18,6 @@ class UpdateScreen extends StatefulWidget {
 
 class _UpdateScreenState extends State<UpdateScreen> {
   late List<ExerciseDao> exercisesDB;
-  final List<String> _types = [
-    TypeTraining.cardio.name,
-    TypeTraining.lower.name,
-    TypeTraining.upper.name,
-    TypeTraining.pole.name,
-    TypeTraining.yoga.name,
-  ];
 
   String? _selectedType;
 
@@ -55,9 +48,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                             children: exercisesDB.map((item) {
                               return GestureDetector(
                                 onTap: () {
-                                  showEditDeleteDialog(
-                                      ExerciseDao.convertToExercise(item),
-                                      context);
+                                  showEditDeleteDialog(item, context);
                                 },
                                 child: CustomExerciseCardItem(
                                     exercise:
@@ -175,7 +166,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                   Icons.arrow_downward_sharp,
                   size: 14,
                 ),
-                items: _types.map((String type) {
+                items: listTypeTrainings.map((String type) {
                   return DropdownMenuItem<String>(
                     value: type,
                     child: Text(
@@ -235,7 +226,8 @@ class _UpdateScreenState extends State<UpdateScreen> {
     return random.nextInt(1000000);
   }
 
-  Future<void> showEditDeleteDialog(Exercise exercise, dynamic context) async {
+  Future<void> showEditDeleteDialog(
+      ExerciseDao exerciseDao, dynamic context) async {
     await showDialog(
       context: context,
       builder: (context) {
@@ -272,7 +264,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                 onTap: () {
                   Navigator.of(context).pop();
                   print('edit');
-                  //showEditPatientDialog(patient);
+                  showEditExerciseDialog(exerciseDao);
                 },
               ),
               ListTile(
@@ -291,7 +283,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                   ],
                 ),
                 onTap: () async {
-                  await DatabaseHelper.instance.deleteExercise(exercise.name);
+                  await DatabaseHelper.instance.deleteExercise(exerciseDao.id!);
                   loadExercises();
                   Navigator.of(context).pop();
                 },
@@ -312,6 +304,99 @@ class _UpdateScreenState extends State<UpdateScreen> {
               exercise: exercises[index], color: AppColors.green);
         },
       ),
+    );
+  }
+
+  Future<void> showEditExerciseDialog(ExerciseDao exerciseDao) async {
+    TextEditingController nameController =
+        TextEditingController(text: exerciseDao.name);
+    TextEditingController descriptionController =
+        TextEditingController(text: exerciseDao.description);
+
+    await showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Edit Patient'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextField(
+                controller: nameController,
+                decoration: const InputDecoration(labelText: 'Name'),
+              ),
+              TextField(
+                controller: descriptionController,
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(labelText: 'Age'),
+              ),
+              DropdownButtonFormField<String>(
+                decoration: const InputDecoration(
+                  labelText: 'Type',
+                  border: InputBorder.none,
+                  labelStyle: TextStyle(
+                    fontSize: 14,
+                    color: AppColors.justGrey,
+                  ),
+                ),
+                value: _selectedType,
+                icon: const Icon(
+                  Icons.arrow_downward_sharp,
+                  size: 14,
+                ),
+                items: listTypeTrainings.map((String type) {
+                  return DropdownMenuItem<String>(
+                    value: type,
+                    child: Text(
+                      type,
+                      style: const TextStyle(
+                        fontSize: 12,
+                        color: AppColors.justGrey,
+                      ),
+                    ),
+                  );
+                }).toList(),
+                onChanged: (String? newValue) {
+                  setState(() {
+                    _selectedType = newValue;
+                  });
+                },
+                validator: (value) {
+                  if (value == null) {
+                    return _selectedType;
+                  }
+                  return null;
+                },
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () async {
+                ExerciseDao updatedExerciseDao = ExerciseDao(
+                  id: exerciseDao.id,
+                  name: nameController.text,
+                  description: descriptionController.text,
+                  typeTraining: _selectedType.toString(),
+                  pathImage: Strings.imageWorkoutLateralAbdominal,
+                );
+
+                await DatabaseHelper.instance
+                    .updateExercise(updatedExerciseDao);
+                loadExercises();
+                Navigator.of(context).pop();
+              },
+              child: const Text('Save'),
+            ),
+          ],
+        );
+      },
     );
   }
 }
