@@ -43,35 +43,71 @@ class _UpdateScreenState extends State<UpdateScreen> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.end,
+      child: Stack(
         children: [
-          exercisesDB.isNotEmpty
-              ? Expanded(
-                  child: SingleChildScrollView(
-                    child: Card(
-                      child: Column(
-                        children: exercisesDB.map((item) {
-                          return CustomExerciseCardItem(
-                              exercise: ExerciseDao.convertToExercise(item),
-                              color: AppColors.lightGreen);
-                        }).toList(),
+          Column(
+            children: [
+              exercisesDB.isNotEmpty
+                  ? Expanded(
+                      child: SingleChildScrollView(
+                        child: Card(
+                          child: Column(
+                            children: exercisesDB.map((item) {
+                              return GestureDetector(
+                                onTap: () {
+                                  showEditDeleteDialog(
+                                      ExerciseDao.convertToExercise(item),
+                                      context);
+                                },
+                                child: CustomExerciseCardItem(
+                                    exercise:
+                                        ExerciseDao.convertToExercise(item),
+                                    color: AppColors.lightGreen),
+                              );
+                            }).toList(),
+                          ),
+                        ),
+                      ),
+                    )
+                  : const SizedBox(
+                      width: double.infinity,
+                      height: 50,
+                      child: Card(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.warning,
+                              color: AppColors.yellow,
+                            ),
+                            SizedBox(
+                              width: 8,
+                            ),
+                            Text(
+                              'No exercises available :)',
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                )
-              : const Center(
-                  child: Text('No exercises available'),
-                ),
-          FloatingActionButton(
-            backgroundColor: AppColors.green,
-            onPressed: () {
-              showAddExerciseDialog();
-            },
-            child: const Icon(
-              Icons.add,
-              color: AppColors.justWhite,
+            ],
+          ),
+          Positioned(
+            right: 8,
+            bottom: 8,
+            child: FloatingActionButton(
+              backgroundColor: AppColors.green,
+              onPressed: () {
+                showAddExerciseDialog();
+              },
+              child: const Icon(
+                Icons.add,
+                color: AppColors.justWhite,
+              ),
             ),
           )
         ],
@@ -87,29 +123,68 @@ class _UpdateScreenState extends State<UpdateScreen> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: const Text('Add new Exercise'),
+          title: const Text(
+            'Add new Exercise',
+            style: TextStyle(
+              fontSize: 16,
+              color: AppColors.justGrey,
+            ),
+          ),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               TextField(
+                style: const TextStyle(
+                  fontSize: 14,
+                  color: AppColors.justGrey,
+                ),
                 controller: nameController,
-                decoration: const InputDecoration(labelText: 'Name'),
+                decoration: const InputDecoration(
+                  labelText: 'Name',
+                  labelStyle: TextStyle(
+                    fontSize: 12,
+                    color: AppColors.justGrey,
+                  ),
+                ),
               ),
               TextField(
+                style: const TextStyle(
+                  fontSize: 14,
+                  color: AppColors.justGrey,
+                ),
                 controller: descriptionController,
-                decoration: const InputDecoration(labelText: 'Description'),
+                decoration: const InputDecoration(
+                  labelText: 'Description',
+                  labelStyle: TextStyle(
+                    fontSize: 12,
+                    color: AppColors.justGrey,
+                  ),
+                ),
               ),
               DropdownButtonFormField<String>(
                 decoration: const InputDecoration(
                   labelText: 'Type',
-                  border: OutlineInputBorder(),
+                  border: InputBorder.none,
+                  labelStyle: TextStyle(
+                    fontSize: 14,
+                    color: AppColors.justGrey,
+                  ),
                 ),
                 value: _selectedType,
-                icon: const Icon(Icons.arrow_downward),
+                icon: const Icon(
+                  Icons.arrow_downward_sharp,
+                  size: 14,
+                ),
                 items: _types.map((String type) {
                   return DropdownMenuItem<String>(
                     value: type,
-                    child: Text(type),
+                    child: Text(
+                      type,
+                      style: const TextStyle(
+                        fontSize: 12,
+                        color: AppColors.justGrey,
+                      ),
+                    ),
                   );
                 }).toList(),
                 onChanged: (String? newValue) {
@@ -165,12 +240,35 @@ class _UpdateScreenState extends State<UpdateScreen> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: const Text('Edit or Delete Patient'),
+          backgroundColor: AppColors.backgroundGrey,
+          title: const Text(
+            'Edit or Delete Exercise :)',
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               ListTile(
-                title: const Text('Edit'),
+                title: const Row(
+                  children: [
+                    Icon(
+                      Icons.edit,
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    Text(
+                      'Edit',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
                 onTap: () {
                   Navigator.of(context).pop();
                   print('edit');
@@ -178,7 +276,20 @@ class _UpdateScreenState extends State<UpdateScreen> {
                 },
               ),
               ListTile(
-                title: const Text('Delete'),
+                title: const Row(
+                  children: [
+                    Icon(
+                      Icons.delete,
+                    ),
+                    Text(
+                      'Delete',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
                 onTap: () async {
                   await DatabaseHelper.instance.deleteExercise(exercise.name);
                   loadExercises();
