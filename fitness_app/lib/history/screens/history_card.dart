@@ -11,17 +11,10 @@ class HistoryCard extends StatelessWidget {
 
   //change to controller
   void goToDetails(BuildContext context, ExerciseHistory workoutExercise) {
-    Modular.to.navigate(
+    Modular.to.pushNamed(
         AppModuleRoutes.historyModule +
             AppChildRoutes.historyExerciseDetailsRoute,
         arguments: exerciseHistory);
-    // Navigator.push(
-    //   context,
-    //   MaterialPageRoute(
-    //     builder: (context) =>
-    //         HistoryExerciseDetails(exerciseHistory: exerciseHistory),
-    //   ),
-    // );
   }
 
   @override

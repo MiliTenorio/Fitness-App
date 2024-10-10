@@ -14,30 +14,11 @@ class ExerciseCard extends StatelessWidget {
 
   //change to controller
   void _goToDetails(BuildContext context, WorkoutExercises workoutExercise) {
-    Modular.to.navigate(
+    Modular.to.pushNamed(
         AppModuleRoutes.trainingModule +
             AppChildRoutes.trainingExerciseDetailsRoute,
         arguments: workoutExercise);
-    // Navigator.push(
-    //   context,
-    //   MaterialPageRoute(
-    //     builder: (context) => TrainingExerciseDetailsScreen(
-    //       workoutExercises: workoutExercise,
-    //     ),
-    //   ),
-    // );
   }
-
-  //change to controller
-  // void _showDialog(BuildContext context, WorkoutExercises exercise) {
-  //   CustomDialog dialog = CustomDialog();
-  //   dialog.showCustomDialog(
-  //     context,
-  //     exercise.name,
-  //     'You have selected the ${exercise.name} exercise!',
-  //     exercise.icon,
-  //   );
-  // }
 
   @override
   Widget build(BuildContext context) {

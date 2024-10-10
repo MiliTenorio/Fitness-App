@@ -1,5 +1,6 @@
 import 'package:fitness_app/common/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
@@ -22,7 +23,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           color: AppColors.justWhite,
         ),
         onPressed: () {
-          Navigator.pop(context);
+          Modular.to.pop(context);
         },
       ),
       title: Row(

@@ -55,7 +55,7 @@ class _TimerGraphState extends State<TimerGraph> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 200,
-      width: MediaQuery.of(context).size.width - 170,
+      width: MediaQuery.of(context).size.width - 160,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[

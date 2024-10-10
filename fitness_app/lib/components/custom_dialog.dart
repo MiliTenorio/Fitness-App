@@ -1,5 +1,6 @@
 import 'package:fitness_app/common/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class CustomDialog {
   void showCustomDialog(
@@ -47,13 +48,13 @@ class CustomDialog {
             TextButton(
               child: const Text('Cancel'),
               onPressed: () {
-                Navigator.of(context).pop();
+                Modular.to.pop(context);
               },
             ),
             ElevatedButton(
               child: const Text('OK'),
               onPressed: () {
-                Navigator.of(context).pop();
+                Modular.to.pop(context);
               },
             ),
           ],

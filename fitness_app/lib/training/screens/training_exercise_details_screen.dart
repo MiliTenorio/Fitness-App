@@ -20,17 +20,9 @@ class TrainingExerciseDetailsScreen extends StatefulWidget {
 class _TrainingExerciseDetailsState
     extends State<TrainingExerciseDetailsScreen> {
   void _startTraining(BuildContext context, WorkoutExercises workoutExercise) {
-    Modular.to.navigate(
+    Modular.to.pushNamed(
         AppModuleRoutes.trainingModule + AppChildRoutes.startTrainingRoute,
         arguments: workoutExercise);
-    // Navigator.push(
-    //   context,
-    //   MaterialPageRoute(
-    //     builder: (context) => StartTrainingScreen(
-    //       workoutExercises: workoutExercise,
-    //     ),
-    //   ),
-    // );
   }
 
   @override

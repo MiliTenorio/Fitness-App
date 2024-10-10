@@ -8,6 +8,7 @@ import 'package:fitness_app/database/database_helper.dart';
 import 'package:fitness_app/database/models/exercise_dao.dart';
 import 'package:fitness_app/models/exercise/exercise.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class ManagerScreen extends StatefulWidget {
   const ManagerScreen({super.key});
@@ -196,7 +197,7 @@ class _ManagerScreenState extends State<ManagerScreen> {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop();
+                Modular.to.pop(context);
               },
               child: const Text('Cancel'),
             ),
@@ -212,7 +213,7 @@ class _ManagerScreenState extends State<ManagerScreen> {
 
                 await DatabaseHelper.instance.insertExercise(newExercise);
                 loadExercises();
-                Navigator.of(context).pop();
+                Modular.to.pop(context);
               },
               child: const Text('Add'),
             ),
@@ -263,7 +264,7 @@ class _ManagerScreenState extends State<ManagerScreen> {
                   ],
                 ),
                 onTap: () {
-                  Navigator.of(context).pop();
+                  Modular.to.pop(context);
                   print('edit');
                   showEditExerciseDialog(exerciseDao);
                 },
@@ -286,7 +287,7 @@ class _ManagerScreenState extends State<ManagerScreen> {
                 onTap: () async {
                   await DatabaseHelper.instance.deleteExercise(exerciseDao.id!);
                   loadExercises();
-                  Navigator.of(context).pop();
+                  Modular.to.pop(context);
                 },
               ),
             ],
@@ -399,7 +400,7 @@ class _ManagerScreenState extends State<ManagerScreen> {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop();
+                Modular.to.pop(context);
               },
               child: const Text('Cancel'),
             ),
@@ -416,7 +417,7 @@ class _ManagerScreenState extends State<ManagerScreen> {
                 await DatabaseHelper.instance
                     .updateExercise(updatedExerciseDao);
                 loadExercises();
-                Navigator.of(context).pop();
+                Modular.to.pop(context);
               },
               child: const Text('Save'),
             ),
