@@ -2,6 +2,7 @@
 import 'package:fitness_app/common/app_colors.dart';
 import 'package:fitness_app/common/strings.dart';
 import 'package:fitness_app/history/screens/history_screen.dart';
+import 'package:fitness_app/manager/screens/manager_screen.dart';
 import 'package:fitness_app/models/enum_types.dart';
 import 'package:fitness_app/models/exercise/exercise.dart';
 import 'package:fitness_app/models/exercise_history.dart';
@@ -9,7 +10,6 @@ import 'package:fitness_app/models/workout_exercises.dart';
 import 'package:fitness_app/newTraining/add_training_screen.dart';
 import 'package:fitness_app/progress/progress_screen.dart';
 import 'package:fitness_app/training/screens/training_screen.dart';
-import 'package:fitness_app/update/screens/update_screen.dart';
 import 'package:flutter/material.dart';
 
 //Screens
@@ -19,8 +19,8 @@ List<Map<String, Object>>? screens = [
     'screen': TrainingScreen(),
   },
   {
-    'title': Strings.updateSession,
-    'screen': const UpdateScreen(),
+    'title': Strings.managerSession,
+    'screen': const ManagerScreen(),
   },
   {
     'title': Strings.newTrainingSession,
@@ -42,7 +42,7 @@ List<Icon>? icons = [
     color: AppColors.justWhite,
   ),
   const Icon(
-    Icons.change_circle_outlined,
+    Icons.settings,
     color: AppColors.justWhite,
   ),
   const Icon(

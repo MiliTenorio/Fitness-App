@@ -3,7 +3,7 @@ class Strings {
 
   //menu
   static const String trainingSession = 'Training';
-  static const String updateSession = 'Update';
+  static const String managerSession = 'Manager';
   static const String newTrainingSession = 'New Training';
   static const String iDontKnowSession = 'I don\'t';
   static const String historySession = 'History';
@@ -46,7 +46,7 @@ class Strings {
 
 extension AppModuleRoutes on String {
   static const String trainingModule = "/training-module";
-  static const String updateModule = "/update-module";
+  static const String managerModule = "/manager-module";
   static const String newTraining = "/new-training-module";
   static const String iDontKnowModule = "/i-dont-know-module";
   static const String historyModule = "/history-module";

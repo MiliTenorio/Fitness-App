@@ -1,10 +1,10 @@
 import 'package:fitness_app/common/strings.dart';
 import 'package:fitness_app/history/history_module.dart';
+import 'package:fitness_app/manager/manager_module.dart';
 import 'package:fitness_app/newTraining/new_training_module.dart';
 import 'package:fitness_app/progress/idontknow_module.dart';
 import 'package:fitness_app/tabBarMenu/tarbar_module.dart';
 import 'package:fitness_app/training/training_module.dart';
-import 'package:fitness_app/update/updade_module.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class AppModule extends Module {
@@ -15,7 +15,7 @@ class AppModule extends Module {
     r.module(AppModuleRoutes.historyModule, module: HistoryModule());
     r.module(AppModuleRoutes.newTraining, module: NewTrainingModule());
     r.module(AppModuleRoutes.iDontKnowModule, module: IdontknowModule());
-    r.module(AppModuleRoutes.updateModule, module: UpdadeModule());
+    r.module(AppModuleRoutes.managerModule, module: ManagerModule());
   }
 
   @override

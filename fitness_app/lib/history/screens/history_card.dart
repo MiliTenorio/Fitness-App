@@ -1,7 +1,8 @@
+import 'package:fitness_app/common/strings.dart';
 import 'package:fitness_app/components/custom_card.dart';
-import 'package:fitness_app/history/screens/history_exercise_details.dart';
 import 'package:fitness_app/models/exercise_history.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:intl/intl.dart';
 
 class HistoryCard extends StatelessWidget {
@@ -10,13 +11,17 @@ class HistoryCard extends StatelessWidget {
 
   //change to controller
   void goToDetails(BuildContext context, ExerciseHistory workoutExercise) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) =>
-            HistoryExerciseDetails(exerciseHistory: exerciseHistory),
-      ),
-    );
+    Modular.to.navigate(
+        AppModuleRoutes.historyModule +
+            AppChildRoutes.historyExerciseDetailsRoute,
+        arguments: exerciseHistory);
+    // Navigator.push(
+    //   context,
+    //   MaterialPageRoute(
+    //     builder: (context) =>
+    //         HistoryExerciseDetails(exerciseHistory: exerciseHistory),
+    //   ),
+    // );
   }
 
   @override

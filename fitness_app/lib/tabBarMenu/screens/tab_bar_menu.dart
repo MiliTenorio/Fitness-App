@@ -65,8 +65,7 @@ class _TabBarMenu extends State<TabBarMenu> {
               icon: Icon(Icons.sports_gymnastics),
               label: Strings.trainingSession),
           BottomNavigationBarItem(
-              icon: Icon(Icons.change_circle_outlined),
-              label: Strings.updateSession),
+              icon: Icon(Icons.settings), label: Strings.managerSession),
           BottomNavigationBarItem(
               icon: Icon(Icons.add), label: Strings.newTrainingSession),
           BottomNavigationBarItem(

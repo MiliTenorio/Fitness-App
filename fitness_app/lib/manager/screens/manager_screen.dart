@@ -9,14 +9,14 @@ import 'package:fitness_app/database/models/exercise_dao.dart';
 import 'package:fitness_app/models/exercise/exercise.dart';
 import 'package:flutter/material.dart';
 
-class UpdateScreen extends StatefulWidget {
-  const UpdateScreen({super.key});
+class ManagerScreen extends StatefulWidget {
+  const ManagerScreen({super.key});
 
   @override
-  State<UpdateScreen> createState() => _UpdateScreenState();
+  State<ManagerScreen> createState() => _ManagerScreenState();
 }
 
-class _UpdateScreenState extends State<UpdateScreen> {
+class _ManagerScreenState extends State<ManagerScreen> {
   late List<ExerciseDao> exercisesDB;
 
   String? _selectedType;
@@ -62,7 +62,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                     )
                   : const SizedBox(
                       width: double.infinity,
-                      height: 50,
+                      height: 60,
                       child: Card(
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -78,6 +78,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                               'No exercises available :)',
                               style: TextStyle(
                                 fontSize: 14,
+                                color: AppColors.justGrey,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -317,18 +318,43 @@ class _UpdateScreenState extends State<UpdateScreen> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: const Text('Edit Patient'),
+          title: const Text(
+            'Edit Patient',
+            style: TextStyle(
+              fontSize: 16,
+              color: AppColors.justGrey,
+            ),
+          ),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               TextField(
+                style: const TextStyle(
+                  fontSize: 14,
+                  color: AppColors.justGrey,
+                ),
                 controller: nameController,
-                decoration: const InputDecoration(labelText: 'Name'),
+                decoration: const InputDecoration(
+                  labelText: 'Name',
+                  labelStyle: TextStyle(
+                    fontSize: 12,
+                    color: AppColors.justGrey,
+                  ),
+                ),
               ),
               TextField(
+                style: const TextStyle(
+                  fontSize: 14,
+                  color: AppColors.justGrey,
+                ),
                 controller: descriptionController,
-                keyboardType: TextInputType.number,
-                decoration: const InputDecoration(labelText: 'Age'),
+                decoration: const InputDecoration(
+                  labelText: 'Description',
+                  labelStyle: TextStyle(
+                    fontSize: 12,
+                    color: AppColors.justGrey,
+                  ),
+                ),
               ),
               DropdownButtonFormField<String>(
                 decoration: const InputDecoration(

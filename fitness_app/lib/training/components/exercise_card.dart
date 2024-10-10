@@ -1,8 +1,8 @@
 import 'package:fitness_app/common/strings.dart';
 import 'package:fitness_app/components/custom_card.dart';
 import 'package:fitness_app/models/workout_exercises.dart';
-import 'package:fitness_app/training/screens/training_exercise_details_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class ExerciseCard extends StatelessWidget {
   const ExerciseCard({
@@ -14,14 +14,18 @@ class ExerciseCard extends StatelessWidget {
 
   //change to controller
   void _goToDetails(BuildContext context, WorkoutExercises workoutExercise) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => TrainingExerciseDetailsScreen(
-          workoutExercises: workoutExercise,
-        ),
-      ),
-    );
+    Modular.to.navigate(
+        AppModuleRoutes.trainingModule +
+            AppChildRoutes.trainingExerciseDetailsRoute,
+        arguments: workoutExercise);
+    // Navigator.push(
+    //   context,
+    //   MaterialPageRoute(
+    //     builder: (context) => TrainingExerciseDetailsScreen(
+    //       workoutExercises: workoutExercise,
+    //     ),
+    //   ),
+    // );
   }
 
   //change to controller

@@ -1,16 +1,18 @@
+import 'package:fitness_app/app/app_module.dart';
 import 'package:fitness_app/common/app_colors.dart';
 import 'package:fitness_app/common/app_theme.dart';
-import 'package:fitness_app/history/screens/history_screen.dart';
-import 'package:fitness_app/newTraining/add_training_screen.dart';
-import 'package:fitness_app/progress/progress_screen.dart';
-import 'package:fitness_app/tabBarMenu/screens/tab_bar_menu.dart';
-import 'package:fitness_app/training/screens/training_screen.dart';
-import 'package:fitness_app/update/screens/update_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ModularApp(
+      module: AppModule(),
+      child: const MyApp(),
+    ),
+  );
 
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     systemNavigationBarColor: AppColors.backgroundGrey,
@@ -23,26 +25,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      key: navigatorKey,
       debugShowCheckedModeBanner: false,
-      title: 'Fitness App',
       theme: getThemeData(context),
-      //home: const TabBarMenu(),
-      routes: {
-        '/': (context) => const TabBarMenu(),
-        '/training': (context) => TrainingScreen(),
-        '/update': (context) => const UpdateScreen(),
-        '/newTraining': (context) => const AddTrainingScreen(),
-        '/iDontKnow': (context) => const ProgressScreen(),
-        '/history': (context) => const HistoryScreen(),
-      },
+      routerConfig: Modular.routerConfig,
     );
-    // return MaterialApp.router(
-    //   title: 'Fitnes app :)',
-    //   theme: getThemeData(context),
-    //   routeInformationParser: Modular.routeInformationParser,
-    //   routerDelegate: Modular.routerDelegate,
-    //   routerConfig: Modular.routerConfig,
-    // );
   }
 }
