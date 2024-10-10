@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:fitness_app/models/enum_types.dart';
 import 'package:fitness_app/models/exercise/exercise.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +13,7 @@ class WorkoutExercises {
   final String name;
   final IconData icon;
   final Color color;
+  final Timer? timer;
 
   WorkoutExercises({
     required this.exercises,
@@ -21,5 +24,6 @@ class WorkoutExercises {
     required this.name,
     required this.icon,
     required this.color,
+    this.timer,
   });
 }
