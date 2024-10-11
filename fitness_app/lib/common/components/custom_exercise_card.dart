@@ -1,4 +1,4 @@
-import 'package:fitness_app/components/custom_card.dart';
+import 'package:fitness_app/common/components/custom_card.dart';
 import 'package:fitness_app/models/exercise/exercise.dart';
 import 'package:fitness_app/training/components/custom_exercise_card_details.dart';
 import 'package:flutter/material.dart';

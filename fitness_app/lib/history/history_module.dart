@@ -1,6 +1,6 @@
 import 'package:fitness_app/common/strings.dart';
-import 'package:fitness_app/history/screens/history_exercise_details.dart';
-import 'package:fitness_app/history/screens/history_screen.dart';
+import 'package:fitness_app/history/presentation/screens/history_exercise_details.dart';
+import 'package:fitness_app/history/presentation/screens/history_screen.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class HistoryModule extends Module {

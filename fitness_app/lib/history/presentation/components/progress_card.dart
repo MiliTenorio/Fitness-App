@@ -1,5 +1,5 @@
-import 'package:fitness_app/components/custom_graph_card.dart';
-import 'package:fitness_app/history/screens/progress_graph.dart';
+import 'package:fitness_app/common/components/custom_graph_card.dart';
+import 'package:fitness_app/history/presentation/components/progress_graph.dart';
 import 'package:flutter/material.dart';
 
 class ProgressCard extends StatelessWidget {

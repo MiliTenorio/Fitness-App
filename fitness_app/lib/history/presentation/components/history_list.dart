@@ -1,5 +1,5 @@
 import 'package:fitness_app/common/mock_data.dart';
-import 'package:fitness_app/history/screens/history_card.dart';
+import 'package:fitness_app/history/presentation/components/history_card.dart';
 import 'package:flutter/material.dart';
 
 class HistoryList extends StatelessWidget {

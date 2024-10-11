@@ -1,7 +1,7 @@
+import 'package:fitness_app/common/components/custom_app_bar.dart';
+import 'package:fitness_app/common/components/custom_body_title.dart';
+import 'package:fitness_app/common/components/custom_exercise_list.dart';
 import 'package:fitness_app/common/strings.dart';
-import 'package:fitness_app/components/custom_app_bar.dart';
-import 'package:fitness_app/components/custom_body_title.dart';
-import 'package:fitness_app/components/custom_exercise_list.dart';
 import 'package:fitness_app/models/exercise_history.dart';
 import 'package:flutter/material.dart';
 

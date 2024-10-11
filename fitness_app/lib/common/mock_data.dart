@@ -1,7 +1,7 @@
 //Mock Data
 import 'package:fitness_app/common/app_colors.dart';
 import 'package:fitness_app/common/strings.dart';
-import 'package:fitness_app/history/screens/history_screen.dart';
+import 'package:fitness_app/history/presentation/screens/history_screen.dart';
 import 'package:fitness_app/manager/screens/manager_screen.dart';
 import 'package:fitness_app/models/enum_types.dart';
 import 'package:fitness_app/models/exercise/exercise.dart';

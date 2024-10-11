@@ -1,7 +1,7 @@
+import 'package:fitness_app/common/components/custom_app_bar.dart';
+import 'package:fitness_app/common/components/custom_body_title.dart';
+import 'package:fitness_app/common/components/custom_graph_card.dart';
 import 'package:fitness_app/common/strings.dart';
-import 'package:fitness_app/components/custom_app_bar.dart';
-import 'package:fitness_app/components/custom_body_title.dart';
-import 'package:fitness_app/components/custom_graph_card.dart';
 import 'package:fitness_app/models/workout_exercises.dart';
 import 'package:fitness_app/training/components/start_graph.dart';
 import 'package:fitness_app/training/components/training_list.dart';

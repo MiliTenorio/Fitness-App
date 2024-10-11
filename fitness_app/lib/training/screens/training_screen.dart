@@ -1,6 +1,6 @@
+import 'package:fitness_app/common/components/custom_body_title.dart';
 import 'package:fitness_app/common/mock_data.dart';
 import 'package:fitness_app/common/strings.dart';
-import 'package:fitness_app/components/custom_body_title.dart';
 import 'package:fitness_app/models/workout_exercises.dart';
 import 'package:fitness_app/training/components/resume_card.dart';
 import 'package:fitness_app/training/components/workout_list.dart';

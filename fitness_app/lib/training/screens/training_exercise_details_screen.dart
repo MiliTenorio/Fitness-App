@@ -1,8 +1,8 @@
 import 'package:fitness_app/common/app_colors.dart';
+import 'package:fitness_app/common/components/custom_app_bar.dart';
+import 'package:fitness_app/common/components/custom_body_title.dart';
+import 'package:fitness_app/common/components/custom_exercise_list.dart';
 import 'package:fitness_app/common/strings.dart';
-import 'package:fitness_app/components/custom_app_bar.dart';
-import 'package:fitness_app/components/custom_body_title.dart';
-import 'package:fitness_app/components/custom_exercise_list.dart';
 import 'package:fitness_app/models/workout_exercises.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';

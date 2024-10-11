@@ -1,5 +1,5 @@
+import 'package:fitness_app/common/components/custom_card.dart';
 import 'package:fitness_app/common/strings.dart';
-import 'package:fitness_app/components/custom_card.dart';
 import 'package:fitness_app/models/exercise_history.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';

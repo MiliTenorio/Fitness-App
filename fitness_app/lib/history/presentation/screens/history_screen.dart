@@ -1,7 +1,7 @@
+import 'package:fitness_app/common/components/custom_body_title.dart';
 import 'package:fitness_app/common/strings.dart';
-import 'package:fitness_app/components/custom_body_title.dart';
-import 'package:fitness_app/history/screens/history_list.dart';
-import 'package:fitness_app/history/screens/progress_card.dart';
+import 'package:fitness_app/history/presentation/components/history_list.dart';
+import 'package:fitness_app/history/presentation/components/progress_card.dart';
 import 'package:flutter/material.dart';
 
 class HistoryScreen extends StatelessWidget {
