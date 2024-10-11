@@ -6,4 +6,17 @@ class TarbarModule extends Module {
   void routes(RouteManager r) {
     r.child(Modular.initialRoute, child: (_) => const TabBarMenu());
   }
+
+  @override
+  void binds(Injector i) {
+    // i.add<TrainingModule>(TrainingModule.new);
+    // i.add<HistoryModule>(HistoryModule.new);
+    // i.add<NewTrainingModule>(NewTrainingModule.new);
+    // i.add<IdontknowModule>(IdontknowModule.new);
+    // i.add<ManagerModule>(ManagerModule.new);
+
+    // i.addSingleton((i) => InMemoryHistoryRepository());
+    // i.addSingleton((i) => GetAllHistory(i()));
+    // i.addSingleton((i) => HistoryStore(i()));
+  }
 }

@@ -8,7 +8,7 @@ class HistoryModule extends Module {
   void routes(RouteManager r) {
     r.child(
       AppChildRoutes.initialRoute,
-      child: (_) => const HistoryScreen(),
+      child: (_) => HistoryScreen(),
     );
     r.child(
       AppChildRoutes.historyExerciseDetailsRoute,
@@ -17,5 +17,9 @@ class HistoryModule extends Module {
   }
 
   @override
-  void binds(Injector i) {}
+  void binds(Injector i) {
+    // i.addSingleton((i) => InMemoryHistoryRepository());
+    // i.addSingleton((i) => GetAllHistory(i()));
+    // i.addSingleton((i) => HistoryStore(i()));
+  }
 }

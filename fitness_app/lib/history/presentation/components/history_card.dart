@@ -1,16 +1,16 @@
 import 'package:fitness_app/common/components/custom_card.dart';
 import 'package:fitness_app/common/strings.dart';
-import 'package:fitness_app/models/exercise_history.dart';
+import 'package:fitness_app/history/domain/entities/history_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:intl/intl.dart';
 
 class HistoryCard extends StatelessWidget {
   const HistoryCard({super.key, required this.exerciseHistory});
-  final ExerciseHistory exerciseHistory;
+  final HistoryEntity exerciseHistory;
 
   //change to controller
-  void goToDetails(BuildContext context, ExerciseHistory workoutExercise) {
+  void _goToDetails(BuildContext context, HistoryEntity workoutExercise) {
     Modular.to.pushNamed(
         AppModuleRoutes.historyModule +
             AppChildRoutes.historyExerciseDetailsRoute,
@@ -21,16 +21,16 @@ class HistoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        goToDetails(context, exerciseHistory);
+        _goToDetails(context, exerciseHistory);
       },
       child: CustomCard(
-        title: exerciseHistory.workoutExercises.name,
-        subtitle: exerciseHistory.workoutExercises.typeTraining.name,
-        icon: exerciseHistory.workoutExercises.icon,
-        color: exerciseHistory.workoutExercises.color,
-        moreInfoOne: DateFormat('EEEE').format(exerciseHistory.dateTime),
+        title: exerciseHistory.workout.name,
+        subtitle: exerciseHistory.workout.typeTraining.name,
+        icon: exerciseHistory.workout.icon,
+        color: exerciseHistory.workout.color,
+        moreInfoOne: DateFormat('EEEE').format(exerciseHistory.date),
         moreInfoTwo:
-            '${exerciseHistory.dateTime.month}/${exerciseHistory.dateTime.day}',
+            '${exerciseHistory.date.month}/${exerciseHistory.date.day}',
       ),
     );
   }

@@ -1,18 +1,19 @@
-import 'package:fitness_app/common/mock_data.dart';
+import 'package:fitness_app/history/domain/entities/history_entity.dart';
 import 'package:fitness_app/history/presentation/components/history_card.dart';
 import 'package:flutter/material.dart';
 
 class HistoryList extends StatelessWidget {
-  const HistoryList({super.key});
+  const HistoryList({super.key, required this.history});
+  final List<HistoryEntity?> history;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: SingleChildScrollView(
         child: Column(
-          children: historyData.map(
+          children: history.map(
             (item) {
-              return HistoryCard(exerciseHistory: item);
+              return HistoryCard(exerciseHistory: item!);
             },
           ).toList(),
         ),

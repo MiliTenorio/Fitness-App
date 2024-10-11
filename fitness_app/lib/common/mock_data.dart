@@ -1,6 +1,7 @@
 //Mock Data
 import 'package:fitness_app/common/app_colors.dart';
 import 'package:fitness_app/common/strings.dart';
+import 'package:fitness_app/history/domain/entities/history_entity.dart';
 import 'package:fitness_app/history/presentation/screens/history_screen.dart';
 import 'package:fitness_app/manager/screens/manager_screen.dart';
 import 'package:fitness_app/models/enum_types.dart';
@@ -32,7 +33,7 @@ List<Map<String, Object>>? screens = [
   },
   {
     'title': Strings.historySession,
-    'screen': const HistoryScreen(),
+    'screen': HistoryScreen(),
   },
 ];
 
@@ -246,6 +247,30 @@ ExerciseHistory exerciseHistoryThree = ExerciseHistory(
 ExerciseHistory exerciseHistoryFour = ExerciseHistory(
   dateTime: DateTime(2024, 09, 24),
   workoutExercises: workoutExercisesE,
+);
+
+//New
+List<HistoryEntity> historyNewData = [
+  oneHistory,
+  twoHistory,
+];
+
+HistoryEntity oneHistory = HistoryEntity(
+  date: DateTime(2024, 09, 20),
+  workout: workoutExercisesA,
+  timer: const Duration(minutes: 60),
+);
+
+HistoryEntity twoHistory = HistoryEntity(
+  date: DateTime(2024, 09, 21),
+  workout: workoutExercisesB,
+  timer: const Duration(minutes: 45),
+);
+
+HistoryEntity deafultHistory = HistoryEntity(
+  date: DateTime(2000, 01, 01),
+  workout: workoutExercisesF,
+  timer: const Duration(minutes: 120),
 );
 
 final List<String> listTypeTrainings = [
